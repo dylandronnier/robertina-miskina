@@ -1,0 +1,20 @@
+% !TEX program = lualatex
+\documentclass[twosides, 11pt]{book} 
+
+\usepackage[paperheight=21cm,paperwidth=21cm,margin=2cm]{geometry}%showframe
+\usepackage{cuisine}
+\usepackage[hidelinks,colorlinks=false]{hyperref}
+
+\input{coverpage.tex}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\input{recipes/pizza}
+\input{recipes/deliveroo}
+
+\clearpage
+
+\end{document}
