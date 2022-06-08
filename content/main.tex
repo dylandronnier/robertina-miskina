@@ -1,0 +1,57 @@
+% !TEX program = lualatex
+\documentclass[twoside,12pt]{book}
+
+\usepackage{xcolor}
+\usepackage{fontspec}
+\setmainfont{Nimbus Roman}
+\setsansfont{Lato}
+\newfontface\parisianfont{Tangerine Bold}[Color=white]%[Size=25pt]
+
+\usepackage[paperheight=21cm,paperwidth=21cm,margin=2cm]{geometry}%showframe
+\usepackage{cuisine}
+\usepackage[hidelinks,colorlinks=false]{hyperref}
+
+% Headers
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % get rid of headers
+\renewcommand{\headrulewidth}{0pt} % And the line
+\fancyfoot[LE]{\bfseries\thepage} % Font setting for the page number in the foot
+\fancyfoot[RO]{\parisianfont{\fontsize{33pt}{33pt}\selectfont\nouppercase{\rightmark}}} %% Font setting for the page number in the foot
+% remove the page number on chapter pages
+\makeatletter
+\let\ps@plain\ps@empty
+\makeatother
+
+
+\title{Buen Appetito Roberta !}
+\author{Les Schaneurs}
+\date{}
+
+\begin{document}
+
+%\includepdf{bueno-front.pdf}
+%\cleardoublepage
+
+\maketitle
+
+\tableofcontents
+
+\chapter{Les entrées}
+
+\chapter{Les plats de résistance}
+
+\input{recipes/pizza}
+\input{recipes/fajitas}
+
+\chapter{Les desserts}
+
+\input{recipes/tarte-au-citron}
+
+\chapter{Bonus}
+
+\input{recipes/deliveroo}
+
+\cleardoublepage
+
+\end{document}

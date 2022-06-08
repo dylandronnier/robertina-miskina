@@ -12,9 +12,6 @@
 *.log
 *.gz
 auto/*
+cover/picutures/source/*
 *.fdb_latexmk
 *.fls
-!multipartite.pdf
-!graphon*.pdf
-!kernel*.pdf
-!perturb_mul.pdf

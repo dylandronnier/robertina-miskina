@@ -1,0 +1,62 @@
+% !TEX program = lualatex
+\documentclass[%
+      coverheight=210mm,
+      coverwidth=210mm,
+      spinewidth=22mm,
+      marklength=8mm,
+      bleedwidth=3mm,
+      12pt]{bookcover}
+
+\newbookcovercomponenttype{center rotate}{
+\vfill
+\centering
+\rotatebox[origin=c]{-90}{#1}
+\vfill}
+
+\definecolor{ocre}{RGB}{126,12,40}  % Define the red color used for highlighting
+
+\usepackage{pgfornament}
+\usepackage{fontspec}
+\setsansfont{Lato}
+\newfontface\tangerine{Tangerine Bold}[Color=white,Scale=1.2]%[Size=25pt]
+
+\begin{document}
+
+\begin{bookcover}
+
+\bookcovercomponent{picture}{bg front}{pictures/cov-front-1}
+
+\bookcovercomponent{picture}{bg back}{pictures/cov-back-2}
+
+\bookcovercomponent{color}{bg spine}{ocre}
+
+\begin{bookcoverelement}{center rotate}{spine}
+  \color{white}\Large Les Schaneurs -- Buon Appetito Roberta !
+\end{bookcoverelement}
+
+
+\begin{bookcoverelement}{tikz}{front}
+  \fill[ocre] (6,6.5) rectangle (15,14);
+\end{bookcoverelement}
+
+\bookcovercomponent{center}{front}{
+LES SCHANEURS PR\'{E}SENTENT
+
+\vspace{1.5cm}
+
+{\tangerine\Huge Buen Appetito Roberta !}
+
+\vspace{0.8cm}
+
+
+\pgfornament[width = 4cm, color = white]{88}
+
+
+\vspace{0.8cm}
+
+{\large\color{white}Une compilation des\\ meilleures recettes des Schaneurs}
+}
+  
+\end{bookcover}
+
+\end{document}
